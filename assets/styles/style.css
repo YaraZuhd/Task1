@@ -1,0 +1,231 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'Ruda', sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+    .div-bodyy {
+        width: 750px;
+    }
+    .insert-todo {
+        width: 100px
+    }
+}
+
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+    .div-bodyy {
+        width: 970px;
+    }
+}
+
+
+/* Large */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+    .div-bodyy {
+        width: 117px;
+    }
+}
+
+.header {
+    padding: 10px;
+    background-color: #ffd777;
+    color: white;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    width: 60px;
+}
+
+.paraghraph {
+    padding: 10px;
+    text-align: center;
+    vertical-align: baseline;
+    color: #797979;
+    background-color: #f2f2f2;
+    margin-top: 4%;
+}
+
+.list {
+    margin: auto;
+    margin-left: 10%;
+    margin-top: 3%;
+    margin-right: 3%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    align-items: center;
+    background-color: white;
+    padding: 1%;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.list h4 {
+    color: #797979
+}
+
+.list .list-item .add-task-btn {
+    margin-top: 15px;
+    background-color: #5CB8C5;
+    color: white;
+    padding: 5px, 10px;
+    width: 20%;
+    border: 2px #797979;
+}
+
+.div-bodyy .insert-todo {
+    width: 60%;
+    margin: auto;
+    margin-left: 10%;
+    margin-top: 3%;
+    margin-right: 3%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    align-items: center;
+    background-color: white;
+    padding: 1%;
+    box-shadow: 0 4px 2px -2px gray;
+    float: left;
+    display: none;
+}
+
+.buttons {
+    margin-left: 80%;
+    margin-top: -4%;
+    /* background-color: #5CB8C5; */
+}
+
+#cancel-btn,
+#save-btn {
+    padding: 10px;
+}
+
+#save-btn {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    margin-left: 20px;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#cancel-btn {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    /* margin-left: 12%; */
+}
+
+.ul-list {
+    position: relative;
+}
+
+.unorder-list {
+    position: absolute;
+    padding: 2%;
+    right: 2px;
+    top: 2px;
+}
+
+.all {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.inputAdd {
+    width: 150px;
+}
+
+.buttons {
+    width: 200px;
+}
+
+.input-check {
+    width: 100px;
+}
+
+#label1 {
+    width: 50%;
+    margin-right: 5px;
+}
+
+.listLi {
+    padding: 2px;
+}
+
+.icons {
+    margin-left: 60%;
+    width: 100px;
+}
+
+hr {
+    border-bottom: 0 dotted #797979;
+}
+
+.icons #done {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 12%;
+    margin-bottom: 3px;
+}
+
+.icons #delete {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 3px;
+}
+
+.icons #edit {
+    background-color: royalblue;
+    border: none;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 3px;
+}

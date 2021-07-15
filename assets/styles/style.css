@@ -15,9 +15,6 @@ body {
     margin-right: auto;
 }
 
-
-/* Small */
-
 @media (min-width: 768px) {
     .container {
         width: 750px;
@@ -30,9 +27,6 @@ body {
     }
 }
 
-
-/* Medium */
-
 @media (min-width: 992px) {
     .container {
         width: 970px;
@@ -41,9 +35,6 @@ body {
         width: 970px;
     }
 }
-
-
-/* Large */
 
 @media (min-width: 1200px) {
     .container {
@@ -73,15 +64,20 @@ body {
 .paraghraph {
     padding: 10px;
     text-align: center;
-    vertical-align: baseline;
+    /* vertical-align: baseline; */
     color: #797979;
     background-color: #f2f2f2;
     margin-top: 4%;
 }
 
+.div-bodyy {
+    width: 90%;
+}
+
 .list {
     margin: auto;
-    margin-left: 10%;
+    width: 70%;
+    margin-left: 20%;
     margin-top: 3%;
     margin-right: 3%;
     overflow-x: hidden;
@@ -107,8 +103,9 @@ body {
 
 .div-bodyy .insert-todo {
     width: 60%;
+    height: 50px;
     margin: auto;
-    margin-left: 10%;
+    margin-left: 20%;
     margin-top: 3%;
     margin-right: 3%;
     overflow-x: hidden;
@@ -167,6 +164,7 @@ body {
 .all {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 .inputAdd {
@@ -178,7 +176,7 @@ body {
 }
 
 .input-check {
-    width: 100px;
+    width: 200px;
 }
 
 #label1 {
@@ -188,16 +186,18 @@ body {
 
 .listLi {
     padding: 2px;
+    list-style: none;
 }
 
 .icons {
-    margin-left: 60%;
+    margin-left: 50%;
     width: 100px;
 }
 
-hr {
+
+/* hr {
     border-bottom: 0 dotted #797979;
-}
+} */
 
 .icons #done {
     background-color: green;

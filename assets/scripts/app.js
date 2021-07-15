@@ -9,7 +9,14 @@ const CancelButton = document.getElementById('cancel-btn')
 let listUser = []
 let user = { Name: "" };
 
+// localStorage.getItem("productList")==null ---> return array which is object 
+if (localStorage.getItem("todoList") == null) {
+    listUser = [];
+} else {
+    listUser = JSON.parse(localStorage.getItem("todoList"));
+    displayTable()
 
+}
 
 addBtn.addEventListener('click', displayy);
 saveBtn.addEventListener('click', addItems);
@@ -40,7 +47,7 @@ function addItems() {
 }
 
 function deleteItem(index) {
-    alert("yara");
+    alert("The ItemIs Deleted");
     // delete one object element from products array
     listUser.splice(index, 1);
     for (let i = 0; i < listUser.length; i++) {
@@ -59,19 +66,19 @@ function editItemt(index) {
 }
 
 function checkedBox(index) {
-    if (document.getElementById('chb1').checked) {
-        const label11 = document.getElementById("label1");
-        label11.innerHTML = `<del for="chb1" id="label1">${listUser[index].Name}</del>`;
+    if (document.getElementById(`chb${index}`).checked) {
+        const label11 = document.getElementById(`label${index}`);
+        label11.innerHTML = `<del for="chb ${index}" id="label">${listUser[index].Name}</del>`;
     } else {
-        const label11 = document.getElementById("label1");
-        label11.innerHTML = `<label for="chb1" id="label1">${listUser[index].Name}</label>`;
+        const label11 = document.getElementById(`label${index}`);
+        label11.innerHTML = `<label for="chb ${index}" id="label${index}">${listUser[index].Name}</label>`;
     }
 }
 
 function doneItemt(index) {
 
-    const label11 = document.getElementById("label1");
-    label11.innerHTML = `<del for="chb1" id="label1">${listUser[index].Name}</del>`;
+    const label11 = document.getElementById(`label${index}`);
+    label11.innerHTML = `<del for="chb ${index}" id="label${index}">${listUser[index].Name}</del>`;
     //  displayTable();
 }
 
@@ -83,8 +90,8 @@ function displayTable() {
                     <li class="listLi">
                         <div class="all">
                             <div id="input-check">
-                                <input type="checkbox" id="chb1" class="Done" onclick="checkedBox(${i})">
-                                <label for="chb1" id="label1">${listUser[i].Name}</label>
+                                <input type="checkbox" id="chb${i}" class="Done" onclick="checkedBox(${i})">
+                                <label for="chb ${i}" id="label${i}">${listUser[i].Name}</label>
                             </div>
                             <div class="icons">
                                 <button id="done" class="Done" onclick="doneItemt(${i})"><i class="fa fa-check " aria-hidden="true "></i></button>

@@ -57,6 +57,10 @@ body {
     align-items: center;
 }
 
+.header .title {
+    margin-left: -10%;
+}
+
 .header .logo {
     width: 60px;
 }

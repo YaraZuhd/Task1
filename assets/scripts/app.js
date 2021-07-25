@@ -2,8 +2,8 @@ const listt = document.getElementById('listId');
 const todo = document.getElementById('insertTodo');
 const update = document.getElementById('updateInfo')
 const saveBtn = document.getElementById('save-btn');
-const saveUpdate = document.getElementById('save-update');
-const cancelUpdate = document.getElementById('cancel-update')
+const saveUpdate = document.getElementById('saveUpdate');
+const cancelUpdate = document.getElementById('cancelUpdate')
 const addBtn = document.getElementById('btn-add');
 const doneBtn = document.getElementById('done');
 const editBtn = document.getElementById('edit');
@@ -22,17 +22,18 @@ addBtn.addEventListener('click', displayy);
 saveBtn.addEventListener('click', addItems);
 CancelButton.addEventListener('click', cancelAction)
 
+
+
 cancelUpdate.addEventListener('click', function() {
     if (confirm('Are You Sure You Want To Cancel The Update?')) {
-        const label = document.getElementById('nameTodoUpdate');
+        const label = document.getElementById('TodoUpdate');
         label.value = "";
         setTimeout(function() { alert("<..>"); }, 100);
         setTimeout(function() {
             listt.style.display = "block";
             update.style.display = "none";
         }, 1000);
-    } else {
-        alert("PLA")
+
     }
 });
 
@@ -75,7 +76,6 @@ function displayy() {
 }
 
 function cancelAction() {
-
     if (confirm('Are You Sure You Want To Cancel The Insertion?')) {
         let inputInsert = document.getElementById('name-of-todo');
         inputInsert.value = "";
@@ -84,8 +84,6 @@ function cancelAction() {
             listt.style.display = "block";
             todo.style.display = "none";
         }, 1000);
-    } else {
-        alert("PLA")
     }
 }
 
@@ -133,12 +131,14 @@ function deleteItem(index) {
 function editItemt(index) {
     listt.style.display = "none";
     update.style.display = "block";
-    const label = document.getElementById('nameTodoUpdate');
+    const label = document.getElementById('TodoUpdate');
     label.value = listUser[index].Name;
-    if (label.value === null) {
-        alert("Please enter a something to do!");
-    } else {
-        saveUpdate.addEventListener('click', function() {
+    saveUpdate.addEventListener('click', function() {
+        const label = document.getElementById('TodoUpdate');
+        if (label.value === "") {
+            alert("Please enter a something to do!");
+        } else if (label.value != "") {
+            alert(`${label.value}`);
             if (confirm('Are you sure you want to save this update ?')) {
                 // Save it!
                 console.log('Thing was saved to the list.');
@@ -153,9 +153,11 @@ function editItemt(index) {
                 // Do nothing!
                 console.log('Thing was not saved to the list.');
             }
-            displayTable();
-        });
-    }
+        }
+
+        displayTable();
+    });
+
 }
 
 function checkedBox(index) {

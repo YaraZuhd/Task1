@@ -20,17 +20,17 @@
     <!-- Start Header -->
     <div class="header">
         <div class="container">
-            <h1>ToDo List</h1>
+            <h1 class="title">ToDo List</h1>
             <img class="logo" src="./img/to-do-list.png" alt="Logo of todolist">
         </div>
     </div>
     <div class="div-bodyy">
         <p class="paraghraph">Welcome To Our Website, We're Happy That You Chose Us To Help You Arranging Your Work With Our List, Have Fun</p>
-        <div id="list-id" class="list">
+        <div id="listId" class="list">
             <div>
                 <h4><i class="fa fa-tasks" aria-hidden="true"></i> Todo List</h4>
             </div>
-            <div class="list-item">
+            <div class="listItem">
                 <div class="ul-list">
                     <div id="unorder-list">
                     </div>
@@ -38,19 +38,33 @@
                 <button id="btn-add" class="add-task-btn">Add New Task</button>
             </div>
         </div>
-        <div class="insert-todo" id="insert-todo">
-            <div class="inputAdd">
-                <label id="name-todo" for="name">Insert A New ToDo: </label>
-                <br>
-                <input type="text" name="name-of-todo" id="name-of-todo" />
+        <section class=" insert-todo" id="insertTodo">
+            <div class="allSections">
+                <div class="addInfo">
+                    <label id="name-todo" for="name-of-todo">Insert A New ToDo: </label>
+                    <input type="text" name="name-of-todo" id="name-of-todo" />
+                </div>
+                <div class="buttons">
+                    <button id="save-btn"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <button id="cancel-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                </div>
             </div>
-            <div class="buttons">
-                <button id="save-btn"><i class="fa fa-check" aria-hidden="true"></i></button>
-                <button id="cancel-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </section>
+        <section class="updateInfoClass" id="updateInfo">
+            <div class="allSections">
+                <div class="UpdateInfo">
+                    <label id="nameTodoUpdatee" for="nameTodoUpdate">Update A ToDo: </label>
+                    <input type="text" name="nameTodoUpdate" id="nameTodoUpdate" />
+                </div>
+                <div class="buttons ">
+                    <button id="save-update"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <button id="cancel-update"><i class="fa fa-times" aria-hidden="true"></i></button>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
-    <script src="./assets/scripts/app.js "></script>
+
+    <script src="./assets/scripts/app.js"></script>
 </body>
 
 </html>

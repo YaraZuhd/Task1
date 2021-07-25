@@ -15,6 +15,13 @@ body {
     margin-right: auto;
 }
 
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .div-bodyy {
+        width: 100%;
+    }
+}
+
 @media (min-width: 768px) {
     .container {
         width: 750px;
@@ -55,10 +62,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header .title {
-    margin-left: -10%;
+    min-width: 100px;
 }
 
 .header .logo {
@@ -68,10 +72,11 @@ body {
 .paraghraph {
     padding: 10px;
     text-align: center;
-    /* vertical-align: baseline; */
+    vertical-align: baseline;
     color: #797979;
     background-color: #f2f2f2;
     margin-top: 4%;
+    margin-left: 6%;
 }
 
 .div-bodyy {
@@ -93,20 +98,23 @@ body {
 }
 
 .list h4 {
-    color: #797979
+    color: #797979;
+    margin-bottom: 3px;
 }
 
-.list .list-item .add-task-btn {
+.list .add-task-btn {
     margin-top: 15px;
     background-color: #5CB8C5;
     color: white;
     padding: 5px, 10px;
-    width: 20%;
+    width: 15%;
     border: 2px #797979;
+    min-width: 100px;
 }
 
-.div-bodyy .insert-todo {
-    width: 60%;
+.insert-todo,
+.updateInfoClass {
+    width: 70%;
     height: 50px;
     margin: auto;
     margin-left: 20%;
@@ -122,18 +130,29 @@ body {
     display: none;
 }
 
+.allSections {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
 .buttons {
-    margin-left: 80%;
-    margin-top: -4%;
-    /* background-color: #5CB8C5; */
+    /* position: absolute; */
+    margin-left: auto;
+    /* margin-top: -4%; */
+    min-width: 200px;
+    /* padding-top: 6px; */
 }
 
 #cancel-btn,
-#save-btn {
+#save-btn,
+#cancel-update,
+#save-update {
     padding: 10px;
 }
 
-#save-btn {
+#save-btn,
+#save-update {
     background-color: #4CAF50;
     /* Green */
     border: none;
@@ -144,7 +163,8 @@ body {
     text-decoration: none;
 }
 
-#cancel-btn {
+#cancel-btn,
+#cancel-update {
     background-color: red;
     border: none;
     color: white;
@@ -158,6 +178,11 @@ body {
     position: relative;
 }
 
+button,
+.chb {
+    cursor: pointer;
+}
+
 .unorder-list {
     position: absolute;
     padding: 2%;
@@ -169,21 +194,15 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-}
-
-.inputAdd {
-    width: 150px;
-}
-
-.buttons {
-    width: 200px;
+    margin-bottom: 4px;
+    margin-top: 4px;
 }
 
 .input-check {
     width: 200px;
 }
 
-#label1 {
+#label {
     width: 50%;
     margin-right: 5px;
 }
@@ -197,11 +216,6 @@ body {
     margin-left: 50%;
     width: 100px;
 }
-
-
-/* hr {
-    border-bottom: 0 dotted #797979;
-} */
 
 .icons #done {
     background-color: green;

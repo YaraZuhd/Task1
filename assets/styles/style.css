@@ -146,13 +146,13 @@ body {
 
 #cancel-btn,
 #save-btn,
-#cancel-update,
-#save-update {
+#cancelUpdate,
+#saveUpdate {
     padding: 10px;
 }
 
 #save-btn,
-#save-update {
+#saveUpdate {
     background-color: #4CAF50;
     /* Green */
     border: none;
@@ -164,7 +164,7 @@ body {
 }
 
 #cancel-btn,
-#cancel-update {
+#cancelUpdate {
     background-color: red;
     border: none;
     color: white;

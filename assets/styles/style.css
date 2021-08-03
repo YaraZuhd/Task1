@@ -6,20 +6,7 @@
 body {
     font-family: 'Ruda', sans-serif;
     background-color: #f2f2f2;
-}
-
-.container {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .div-bodyy {
-        width: 100%;
-    }
+    /* position: relative; */
 }
 
 @media (min-width: 768px) {
@@ -52,107 +39,183 @@ body {
     }
 }
 
+button,
+.chb {
+    cursor: pointer;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .header {
     padding: 10px;
     background-color: #ffd777;
     color: white;
 }
 
-.header .container {
+.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-width: 100px;
 }
 
-.header .logo {
+.logo {
     width: 60px;
 }
 
+.title {
+    margin-left: 2%;
+}
+
 .paraghraph {
-    padding: 10px;
-    text-align: center;
-    vertical-align: baseline;
+    margin-left: 17%;
+    margin-top: 2.5%;
+    margin-right: -4%;
+    padding: 1%;
     color: #797979;
+    font-size: large;
     background-color: #f2f2f2;
-    margin-top: 4%;
-    margin-left: 6%;
+    min-width: 70px;
+    max-width: fit-content;
 }
 
-.div-bodyy {
-    width: 90%;
+.bodyOfMyDiv {
+    width: 95%;
 }
 
-.list {
-    margin: auto;
-    width: 70%;
-    margin-left: 20%;
-    margin-top: 3%;
-    margin-right: 3%;
-    overflow-x: hidden;
-    overflow-y: hidden;
+.listToDo {
+    max-width: 61%;
+    min-width: 20%;
+    margin-left: 18%;
+    margin-top: 2.5%;
+    /* margin-right: 10%; */
     align-items: center;
     background-color: white;
     padding: 1%;
     box-shadow: 0 4px 2px -2px gray;
+    position: relative;
 }
 
-.list h4 {
-    color: #797979;
-    margin-bottom: 3px;
-}
-
-.list .add-task-btn {
+.addTask {
     margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 1%;
     background-color: #5CB8C5;
     color: white;
-    padding: 5px, 10px;
-    width: 15%;
+    padding: 7px, 10px;
     border: 2px #797979;
+    border-top-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    max-width: fit-content;
     min-width: 100px;
+    font-size: 15px;
 }
 
-.insert-todo,
-.updateInfoClass {
-    width: 70%;
-    height: 50px;
-    margin: auto;
-    margin-left: 20%;
-    margin-top: 3%;
-    margin-right: 3%;
+h4 {
+    color: #797979;
+    padding: 10px;
+    font-size: large;
+}
+
+
+/* .tabelList {
+    position: relative;
+} */
+
+.tabel {
+    /* position: absolute; */
+    /* padding: 2%; */
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    /* position: absolute; */
+    margin-left: 2%;
+    border-collapse: collapse;
+    /* width: 100%; */
+    align-items: center;
+    /* font-weight: bold; */
+}
+
+th {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dragrop {
+    cursor: grabbing;
+    /* background-color: #ffd777; */
+}
+
+td {
+    max-width: 600px;
+    font-size: small;
+    text-align: center;
+    color: #f2f2f2;
+}
+
+td,
+th {
+    border: 0.5px solid #d3d2d2;
+    color: #797979;
+    padding: 8px;
+    margin-left: 2%;
+}
+
+.insertTask,
+.updateTasks {
+    max-width: 61%;
+    min-width: 20%;
+    margin-left: 18%;
+    margin-top: 2.5%;
+    align-items: center;
+    background-color: white;
+    padding: 2%;
+    box-shadow: 0 4px 2px -2px gray;
+    position: relative;
     overflow-x: hidden;
     overflow-y: hidden;
     align-items: center;
-    background-color: white;
-    padding: 1%;
     box-shadow: 0 4px 2px -2px gray;
-    float: left;
     display: none;
 }
 
-.allSections {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+.labelInsert,
+.labelUpdate {
+    vertical-align: top;
+}
+
+.addInfo,
+.chosePriority,
+.tags,
+.buttons,
+.updateInfo,
+.dateForTask,
+.updatePriority,
+.tags {
+    margin-bottom: 3%;
 }
 
 .buttons {
-    /* position: absolute; */
-    margin-left: auto;
-    /* margin-top: -4%; */
+    margin-left: 85%;
     min-width: 200px;
-    /* padding-top: 6px; */
 }
 
-#cancel-btn,
-#save-btn,
-#cancelUpdate,
-#saveUpdate {
+#newSaveBtn,
+#updateSaveBtn,
+#updateCancelBtn,
+#newCancelBtn {
     padding: 10px;
 }
 
-#save-btn,
-#saveUpdate {
+#newSaveBtn,
+#updateSaveBtn {
     background-color: #4CAF50;
     /* Green */
     border: none;
@@ -163,57 +226,89 @@ body {
     text-decoration: none;
 }
 
-#cancel-btn,
-#cancelUpdate {
+#updateCancelBtn,
+#newCancelBtn {
     background-color: red;
     border: none;
     color: white;
     padding: 2px;
     text-align: center;
     text-decoration: none;
-    /* margin-left: 12%; */
 }
 
-.ul-list {
-    position: relative;
-}
-
-button,
-.chb {
+.PopUpForms {
+    background: rgba(0, 0, 0, .4);
     cursor: pointer;
+    display: none;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
 }
 
-.unorder-list {
+
+/* The popup form - hidden by default */
+
+.form-popup {
+    /* display: none; */
+    margin: auto;
+    padding: 10px;
     position: absolute;
-    padding: 2%;
-    right: 2px;
-    top: 2px;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 35%;
+    height: 45%;
+    /* border: 0.25px solid whitesmoke; */
 }
 
-.all {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    margin-bottom: 4px;
-    margin-top: 4px;
+
+/* Add styles to the form container */
+
+.form-container {
+    /* width: 60%; */
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    margin: auto;
 }
 
-.input-check {
-    width: 200px;
+
+/* Set a style for the submit/login button */
+
+.form-container .btnOK,
+.btnOK1 {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 10px;
+    opacity: 0.8;
 }
 
-#label {
-    width: 50%;
-    margin-right: 5px;
-}
 
-.listLi {
-    padding: 2px;
-    list-style: none;
+/* Add a red background color to the cancel button */
+
+.form-container .btnCancel,
+.btnCancel1 {
+    background-color: red;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
 }
 
 .icons {
-    margin-left: 50%;
     width: 100px;
 }
 

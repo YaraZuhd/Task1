@@ -233,6 +233,11 @@ td .Tag {
     display: none;
 }
 
+.labelInsert,
+.labelUpdate {
+    vertical-align: top;
+}
+
 .addInfo,
 .chosePriority,
 .tags,

@@ -72,6 +72,51 @@ button,
     margin-left: 2%;
 }
 
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffd777;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar button {
+    /* border-radius: 5px; */
+    border: 0px;
+    margin-left: 20px;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 9px 6px;
+    text-decoration: none;
+    background-color: #ffd777;
+}
+
+a:active {
+    background-color: #111;
+}
+
+
+/* Change the link color to #111 (black) on hover */
+
+.navbar li a:hover {
+    background-color: #111;
+}
+
+
+/* a {
+    display: block;
+    padding: 3px;
+    background-color: #dddddd;
+} */
+
 .paraghraph {
     margin-left: 17%;
     margin-top: 2.5%;
@@ -101,6 +146,11 @@ button,
     position: relative;
 }
 
+.labelInsert,
+.labelUpdate {
+    vertical-align: top;
+}
+
 .addTask {
     margin-top: 15px;
     margin-bottom: 10px;
@@ -122,14 +172,7 @@ h4 {
     font-size: large;
 }
 
-
-/* .tabelList {
-    position: relative;
-} */
-
 .tabel {
-    /* position: absolute; */
-    /* padding: 2%; */
     width: 100%;
     overflow-x: auto;
 }
@@ -166,6 +209,10 @@ th {
     color: #797979;
     padding: 8px;
     margin-left: 2%;
+}
+
+td .Tag {
+    background-color: rgb(236, 206, 71);
 }
 
 .insertTask,

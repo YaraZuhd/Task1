@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List Website</title>
+    <title>TODO LIST</title>
+    <link rel="icon" href="https://icon-library.com/images/todo-list-icon/todo-list-icon-26.jpg">
     <!-- css file for styling -->
-    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./Assets/Styles/style.css">
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,48 +24,108 @@
             <h1 class="title">ToDo List</h1>
             <img class="logo" src="./img/to-do-list.png" alt="Logo of todolist">
         </div>
+        <nav>
+            <ul class="navbar">
+                <li><button id="Home"><a href="index.html" style="background-color: #111;">Home</a></button></li>
+                <li><button id="about_us"><a href="about.html">About Us</a></button></li>
+                <li><button id="contact_us"><a href="contanct_us.html">Contact With Us</a></button></li>
+            </ul>
+        </nav>
     </div>
-    <div class="div-bodyy">
-        <p class="paraghraph">Welcome To Our Website, We're Happy That You Chose Us To Help You Arranging Your Work With Our List, Have Fun</p>
-        <div id="listId" class="list">
+    <div class="bodyOfMyDiv">
+        <div class="paraghraph">
+            <p>Welcome To Our Website, We're Happy That You Chose Us To Help You Arranging Your Work With Our List, Have Fun</p>
+        </div>
+        <div class="listToDo" id="listTodoId">
             <div>
                 <h4><i class="fa fa-tasks" aria-hidden="true"></i> Todo List</h4>
             </div>
-            <div class="listItem">
-                <div class="ul-list">
-                    <div id="unorder-list">
-                    </div>
+            <div class="tabelList">
+                <div class="tabel" id="tabelId">
+
                 </div>
-                <button id="btn-add" class="add-task-btn">Add New Task</button>
+            </div>
+            <button id="btnAdd" class="addTask">Add New Task</button>
+        </div>
+        <div class="insertTask" id="insertTaskId">
+            <div class="addInfo">
+                <label for="insertTask" class="labelInsert">Insert A New Task :</label>
+                <textarea name="newTask" id="insertTask" cols="40" rows="5"></textarea>
+            </div>
+            <div class="chosePriority">
+                <label for="priority">Choose A Priority:</label>
+                <select name="priority" id="priority">
+                    <option value="none" selected disabled hidden>Select an Option</option>                    
+                    <option value="first">1</option>
+                    <option value="second">2</option>
+                    <option value="third">3</option>
+                    <option value="forth">4</option>
+                    <option value="fivth">5</option>
+                </select>
+            </div>
+            <div class="tags">
+                <label for="tag">Insert A Tag For The Task: </label>
+                <input type="text" name="tag" id="tag" />
+            </div>
+            <div class="buttons">
+                <button id="newSaveBtn"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <button id="newCancelBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
         </div>
-        <section class=" insert-todo" id="insertTodo">
-            <div class="allSections">
-                <div class="addInfo">
-                    <label id="name-todo" for="name-of-todo">Insert A New ToDo: </label>
-                    <input type="text" name="name-of-todo" id="name-of-todo" />
-                </div>
-                <div class="buttons">
-                    <button id="save-btn"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    <button id="cancel-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
-                </div>
+        <div class="updateTasks" id="updateTaskId">
+            <div class="updateInfo">
+                <label for="updateTask" class="labelUpdate">Update Your Task :</label>
+                <textarea name="updateTask" id="updateTask" cols="50" rows="5"></textarea>
             </div>
-        </section>
-        <section class="updateInfoClass" id="updateInfo">
-            <div class="allSections">
-                <div class="UpdateInfo">
-                    <label id="labelUpdate" for="nameTodoUpdate">Update A ToDo: </label>
-                    <input type="text" name="nameTodoUpdate" id="TodoUpdate" />
-                </div>
-                <div class="buttons ">
-                    <button id="saveUpdate"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    <button id="cancelUpdate"><i class="fa fa-times" aria-hidden="true"></i></button>
-                </div>
+            <div class="dateForTask">
+                <label for="createdAt">The Task Created At :</label>
+                <input type="text" id="createdAt" name="createdAt">
+                <br><br>
+                <label for="completedAt">The Task Completed At :</label>
+                <input type="text" id="completedAt" name="completedAt">
             </div>
-        </section>
+            <div class="updatePriority">
+                <label for="priorityUpdate">Update Your Priority:</label>
+                <select name="priorityUpdate" id="priorityUpdate">
+                    <option value="none" selected disabled hidden>Select an Option</option>                    
+                    <option value="first">1</option>
+                    <option value="second">2</option>
+                    <option value="third">3</option>
+                    <option value="forth">4</option>
+                    <option value="fivth">5</option>
+                </select>
+            </div>
+            <div class="tags">
+                <label for="tagUpdate">Update Your Tag For The Task: </label>
+                <input type="text" name="tagUpdate" id="tagUpdate" />
+            </div>
+            <div class="buttons">
+                <button id="updateSaveBtn"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <button id="updateCancelBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+        </div>
     </div>
-
-    <script src="./assets/scripts/app.js"></script>
+    <div class="PopUpForms" id="forms">
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <h1>Warning</h1>
+                <label><b>Don't Leave It Empty!</b></label>
+                <button type="button" class="btnOK" onclick="show()">OK</button>
+                <button type="button" class="btnCancel" onclick="show()">Close</button>
+            </form>
+        </div>
+    </div>
+    <div class="PopUpForms" id="formsConfirm">
+        <div class="form-popup" id="myForm1">
+            <form class="form-container">
+                <h1>Confirm</h1>
+                <label><b>Are You Sure You Want To Delete This Element!</b></label>
+                <button type="button" class="btnOK1" id="okkk" ">OK</button>
+                <button type="button " class="btnCancel1 " onclick="show1() ">Close</button>
+            </form>
+        </div>
+    </div>
+    <script src="./Assets/scripts/script.js "></script>
 </body>
 
 </html>

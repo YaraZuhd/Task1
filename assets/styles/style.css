@@ -1,12 +1,121 @@
 * {
     padding: 0px;
     margin: 0px;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Ruda', sans-serif;
     background-color: #f2f2f2;
     /* position: relative; */
+}
+
+.wrapper {
+    background-color: rgb(255, 255, 255);
+    list-style-type: none;
+    padding: 0;
+    border-radius: 3px;
+}
+
+.form-row>select {
+    flex: 2;
+}
+
+.form-row>textarea {
+    flex: 2;
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+}
+
+.form-row>label {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+}
+
+.form-row>input {
+    flex: 2;
+    padding: -0.5em;
+}
+
+.form-row>button {
+    padding: .5em;
+}
+
+@media (max-width: 480px) {
+    .listToDo {
+        max-width: 100% !important;
+        margin-top: 0;
+        margin-left: 0 !important;
+    }
+    .paraghraph {
+        margin-left: 0 !important;
+        font-size: small !important;
+    }
+    .div-bodyy {
+        overflow-y: auto;
+    }
+    .navbar {
+        display: -webkit-inline-box;
+    }
+    .navbar li {
+        font-size: small;
+    }
+    .navbar li button {
+        font-size: smaller;
+        border: 0;
+    }
+    .title {
+        font-size: larger !important;
+        margin-bottom: 15px;
+    }
+    .logo {
+        width: 30px !important;
+    }
+}
+
+@media (max-width: 290px) {
+    .logo {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .paraghraph {
+        margin-left: 0 !important;
+        font-size: small !important;
+        word-wrap: break-word;
+    }
+    .listToDo {
+        max-width: 100% !important;
+        margin-top: 0;
+        margin-left: 0 !important;
+    }
+    .div-bodyy {
+        overflow-y: auto;
+    }
+    .navbar {
+        display: -webkit-inline-box;
+    }
+    .navbar li {
+        font-size: small;
+    }
+    .navbar li button {
+        font-size: smaller;
+        border: 0;
+    }
+    .logo {
+        width: 30px !important;
+    }
+    .title {
+        font-size: larger !important;
+        margin-bottom: 15px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -55,6 +164,7 @@ button,
     padding: 10px;
     background-color: #ffd777;
     color: white;
+    width: 100%;
 }
 
 .container {
@@ -99,23 +209,12 @@ button,
     background-color: #ffd777;
 }
 
-a:active {
-    background-color: #111;
-}
-
 
 /* Change the link color to #111 (black) on hover */
 
 .navbar li a:hover {
-    background-color: #111;
+    background-color: #797979;
 }
-
-
-/* a {
-    display: block;
-    padding: 3px;
-    background-color: #dddddd;
-} */
 
 .paraghraph {
     margin-left: 17%;
@@ -130,7 +229,7 @@ a:active {
 }
 
 .bodyOfMyDiv {
-    width: 95%;
+    width: 100%;
 }
 
 .listToDo {
@@ -138,7 +237,6 @@ a:active {
     min-width: 20%;
     margin-left: 18%;
     margin-top: 2.5%;
-    /* margin-right: 10%; */
     align-items: center;
     background-color: white;
     padding: 1%;
@@ -148,7 +246,9 @@ a:active {
 
 .labelInsert,
 .labelUpdate {
-    vertical-align: top;
+    align-items: center;
+    display: flex;
+    flex-direction: row
 }
 
 .addTask {
@@ -193,7 +293,6 @@ th {
 
 .dragrop {
     cursor: grabbing;
-    /* background-color: #ffd777; */
 }
 
 td {
@@ -233,11 +332,6 @@ td .Tag {
     display: none;
 }
 
-.labelInsert,
-.labelUpdate {
-    vertical-align: top;
-}
-
 .addInfo,
 .chosePriority,
 .tags,
@@ -264,13 +358,13 @@ td .Tag {
 #newSaveBtn,
 #updateSaveBtn {
     background-color: #4CAF50;
-    /* Green */
     border: none;
     color: white;
     margin-left: 20px;
     padding: 2px;
-    text-align: center;
+    margin-right: 3px;
     text-decoration: none;
+    text-align: center;
 }
 
 #updateCancelBtn,

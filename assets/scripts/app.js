@@ -13,7 +13,7 @@ let todo = { taskName: "", checked: false, createdAt: "", completedAt: "", prior
 
 if (localStorage.getItem("ToDo") == null) {
     ListToDo = [];
-    displayTable();
+    // displayTable();
 } else {
     ListToDo = JSON.parse(localStorage.getItem("ToDo"));
     displayTable()
@@ -55,7 +55,7 @@ function displayTable() {
                     <td>${ListToDo[i].createdAt}</td>
                     <td>${ListToDo[i].completedAt}</td>
                     <td>${ListToDo[i].priority}</td>
-                    <td>${ListToDo[i].tag}</td>
+                    <td class="Tag" style="background-color: #ffd777;">${ListToDo[i].tag}</td>
                     <td>
                         <div class="icons">
                             <button id="done" class="Done" onclick="doneItemt(${i})"><i class="fa fa-check " aria-hidden="true "></i></button>
@@ -72,7 +72,7 @@ function displayTable() {
                     <td style="color: black">${ListToDo[i].createdAt}</td>
                     <td style="color: black">${ListToDo[i].completedAt}</td>
                     <td style="color: black">${ListToDo[i].priority}</td>
-                    <td style="color: black">${ListToDo[i].tag}</td>
+                    <td style="color: black" class="Tag" style="background-color: #ffd777;">${ListToDo[i].tag}</td>
                     <td style="color: black">
                         <div class="icons">
                             <button id="done" class="Done" onclick="doneItemt(${i})"><i class="fa fa-check " aria-hidden="true "></i></button>
@@ -83,15 +83,33 @@ function displayTable() {
                 </tr>`;
         }
         Li += `${row}`;
-        // console.log(ListToDo[i]);
     }
     Li += `</table>`;
     console.log(ListToDo);
     document.getElementById("tabelId").innerHTML = Li;
+    //sort
+    var getCellValue = function(tr, idx) { return tr.children[idx].innerText || tr.children[idx].textContent; }
+
+    var comparer = function(idx, asc) {
+        return function(a, b) {
+            return function(v1, v2) {
+                return v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
+            }(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+        }
+    };
+
+    // do the work...
+    Array.from(document.querySelectorAll('th')).forEach(function(th) {
+        th.addEventListener('click', function() {
+            var table = th.closest('table');
+            Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+                .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+                .forEach(function(tr) { table.appendChild(tr) });
+        })
+    });
 }
 
 function addTask() {
-
     let input = document.getElementById('insertTask');
     let select = document.getElementById('priority')
     if (input.value === "") {
@@ -103,7 +121,6 @@ function addTask() {
             let today = new Date();
             const date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate() + ' ' + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
             console.log(date);
-            // let select = document.getElementById('priority');
             const text = select.options[select.selectedIndex].text;
             console.log(text);
             let tag = document.getElementById('tag');
@@ -157,7 +174,14 @@ function deleteItem(index) {
 
 }
 
-
+function setSelectedValue(selectObj, valueToSet) {
+    for (var i = 0; i < selectObj.options.length; i++) {
+        if (selectObj.options[i].text == valueToSet) {
+            selectObj.options[i].selected = true;
+            return;
+        }
+    }
+}
 
 
 function editItemt(index) {
@@ -165,13 +189,14 @@ function editItemt(index) {
     updateTask.style.display = "block";
     const label = document.getElementById('updateTask');
     label.value = ListToDo[index].taskName;
-    const dateCreated = document.getElementById("createdAt");
-    dateCreated.value = ListToDo[index].createdAt.toString();
-    dateCreated.disabled = true;
-    const dateCompleted = document.getElementById("completedAt");
-    dateCompleted.value = ListToDo[index].completedAt;
-    dateCompleted.disabled = true;
+    // const dateCreated = document.getElementById("createdAt");
+    // dateCreated.value = ListToDo[index].createdAt.toString();
+    // dateCreated.disabled = true;
+    // const dateCompleted = document.getElementById("completedAt");
+    // dateCompleted.value = ListToDo[index].completedAt;
+    // dateCompleted.disabled = true;
     const select = document.getElementById('priorityUpdate');
+    setSelectedValue(select, ListToDo[index].priority);
     select.options[select.selectedIndex].text = ListToDo[index].priority;
     const tag = document.getElementById('tagUpdate');
     tag.value = ListToDo[index].tag;
@@ -237,26 +262,7 @@ function doneItemt(index) {
     localStorage.setItem("ToDo", JSON.stringify(ListToDo));
     displayTable();
 }
-//sort
-var getCellValue = function(tr, idx) { return tr.children[idx].innerText || tr.children[idx].textContent; }
 
-var comparer = function(idx, asc) {
-    return function(a, b) {
-        return function(v1, v2) {
-            return v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
-        }(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
-    }
-};
-
-// do the work...
-Array.from(document.querySelectorAll('th')).forEach(function(th) {
-    th.addEventListener('click', function() {
-        var table = th.closest('table');
-        Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-            .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-            .forEach(function(tr) { table.appendChild(tr) });
-    })
-});
 
 //Drag And Drop
 let shadow
